@@ -2,6 +2,6 @@ package interfaces;
 
 public interface IRedileable {
 
-    public void mensajeEnElRedil();
-    String getNombre();
+    public String mensajeEnElRedil();
+    public String getNombre();
 }

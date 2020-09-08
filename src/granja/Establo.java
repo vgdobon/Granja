@@ -26,7 +26,7 @@ public class Establo {
         if(hayVacas() && buscarVaca()!=null){
             Vaca vaca=buscarVaca();
             establo.remove(vaca);
-            return (IRedileable)vaca;
+            return (IRedileable) vaca;
         }else{
             System.out.println("No hay vacas en este establo");
             return null;

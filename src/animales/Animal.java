@@ -4,9 +4,11 @@ public abstract class Animal {
 
 
     protected String nombre;
+    protected String tipoDeAnimal;
 
-    public Animal(String nombre){
+    public Animal(String nombre,String tipoDeAnimal){
         this.nombre = nombre;
+        this.tipoDeAnimal = tipoDeAnimal;
     }
 
     public String getNombre() {
@@ -15,5 +17,13 @@ public abstract class Animal {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getTipoDeAnimal() {
+        return tipoDeAnimal;
+    }
+
+    public void setTipoDeAnimal(String tipoDeAnimal) {
+        this.tipoDeAnimal = tipoDeAnimal;
     }
 }

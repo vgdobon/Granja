@@ -19,11 +19,11 @@ public class Gallinero {
     }
 
 
-    public Ave sacarAveAlRedil() {
+    public IRedileable sacarAveAlRedil() {
         if (hayGallina() && buscarGallina()!=null) {
             Ave gallina = buscarGallina();
             gallinero.remove(gallina);
-            return gallina;
+            return (IRedileable)gallina;
         } else {
             return null;
         }

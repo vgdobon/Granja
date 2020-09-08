@@ -3,8 +3,6 @@ import granja.Granja;
 import interfaces.IRedileable;
 
 
-public class Main {
-
 //    Una granja tiene establos y un gallinero.
 //    Cada establo tiene un límite de 5 animales.
 //    Puedo meter animales en un establo.
@@ -19,6 +17,11 @@ public class Main {
 //    El granjero quiere saber a qué gallina o pavo se va a comer (nombre).
 //    En el gallinero puedo coger huevos, pero sólo si hay gallinas.
 
+
+public class Main {
+
+
+
     public static void main(String[] args) {
 
         Granja granja = new Granja();
@@ -31,7 +34,6 @@ public class Main {
         Buey buey2=new Buey("Buey2");
         Caballo caballo = new Caballo("Caballo");
         Caballo caballo2 = new Caballo("Caballo2");
-        IRedileable caballo5 = (IRedileable)caballo2;
         granja.establoI.meterEquino(vaca);
         granja.establoI.meterEquino(vaca2);
         granja.establoI.meterEquino(buey);
@@ -83,11 +85,40 @@ public class Main {
 
 
 
+
+
         granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
         granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
         granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
         granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
         granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+        granja.redil.meterAlRedil(granja.gallinero.sacarAveAlRedil());
+        granja.redil.meterAlRedil(granja.gallinero.sacarAveAlRedil());
+
+
+
+
+
+        System.out.println(granja.redil.mensajeCuantasGallinasHay());
+        System.out.println(granja.redil.mensajeCuantasVacasHay());
+
+        granja.redil.pastorear(gallina1);
+        granja.redil.pastorear(gallina2);
+        granja.redil.pastorear(gallina3);
+        granja.redil.pastorear(gallina4);
+        granja.redil.pastorear(gallina5);
+
+        granja.redil.pastorear(vaca3);
+        granja.redil.pastorear(vaca4);
+        granja.redil.pastorear(vaca5);
+        granja.redil.pastorear(vaca6);
+        granja.redil.pastorear(vaca7);
+
+
+
+
+
+
 
 
 
