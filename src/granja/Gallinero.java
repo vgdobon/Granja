@@ -9,49 +9,55 @@ import java.util.ArrayList;
 public class Gallinero {
 
 
-    private int aves=0;
+    private int aves = 0;
     private ArrayList<Ave> gallinero = new ArrayList<Ave>();
 
 
-    public  void meterAve(Ave ave){
-        setAves(getAves()+1);
+    public void meterAve(Ave ave) {
+        setAves(getAves() + 1);
         gallinero.add(ave);
     }
 
 
-    public void sacarAve(Ave ave){
-        setAves(getAves()-1);
-        gallinero.remove(ave);
+    public Ave sacarAveAlRedil() {
+        if (hayGallina() && buscarGallina()!=null) {
+            Ave gallina = buscarGallina();
+            gallinero.remove(gallina);
+            return gallina;
+        } else {
+            return null;
+        }
     }
 
-    public void sacarAve(IRedileable animal){
-        setAves(getAves()-1);
-        gallinero.remove(animal);
+    public Ave buscarGallina(){
+        for (Ave ave:gallinero) {
+            if(ave instanceof Gallina){
+                return ave;
+            }
+        }
+        return null;
     }
 
-    public void recogerHuevo(){
-        if(hayGallina()){
+    public boolean hayGallina() {
+
+        for (int i = 0; i < gallinero.size(); i++) {
+            if (gallinero.get(i) instanceof Gallina) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void recogerHuevo() {
+        if (hayGallina()) {
             System.out.println("Has recogido un huevo del gallinero");
-        }else{
+        } else {
             System.out.println("No se pueden recoger huevos. No hay gallinas en el gallinero");
         }
 
     }
 
-    public boolean hayGallina(){
-        boolean hayGallina=false;
-        for (int i = 0; i <gallinero.size() ; i++) {
-            if(gallinero.get(i) instanceof Gallina){
-                hayGallina = true;
-            }
-        }
-
-        if(hayGallina){
-            return true;
-        }else{
-            return false;
-        }
-    }
 
     public int getAves() {
         return aves;

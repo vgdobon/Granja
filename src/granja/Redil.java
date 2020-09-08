@@ -11,23 +11,11 @@ public class Redil {
 
     ArrayList<IRedileable> redil = new ArrayList<IRedileable>();
 
-    public void meterAlRedil(IRedileable animal,Gallinero gallinero) {
-        redil.add(animal);
-        animal.getNombre();
-        gallinero.sacarAve(animal);
 
+    public void meterAlRedil(IRedileable iRedileable){
+        redil.add(iRedileable);
     }
 
-    public void sacarDelRedil(IRedileable animal,Gallinero gallinero){
-
-    }
-
-    public void meterAlRedil(IRedileable animal,Establo establo) {
-        redil.add(animal);
-        animal.getNombre();
-        establo.
-
-    }
 
 
     public int cuantasVacasHay(Redil redil) {
@@ -42,8 +30,8 @@ public class Redil {
         return cantidadDeVacasEnElRedil;
     }
 
-    public void decirFraseTranquilizadora(IRedileable animal){
-        System.out.println();
+    public void decirFraseTranquilizadora(IRedileable iRedileable){
+        System.out.println("Ven conmigo mi bonit@ " +iRedileable.getNombre());
     }
 
     public int cuantasGallinasHay(Redil redil) {

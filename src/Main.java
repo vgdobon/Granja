@@ -1,5 +1,6 @@
 import animales.*;
 import granja.Granja;
+import interfaces.IRedileable;
 
 
 public class Main {
@@ -30,13 +31,14 @@ public class Main {
         Buey buey2=new Buey("Buey2");
         Caballo caballo = new Caballo("Caballo");
         Caballo caballo2 = new Caballo("Caballo2");
+        IRedileable caballo5 = (IRedileable)caballo2;
         granja.establoI.meterEquino(vaca);
         granja.establoI.meterEquino(vaca2);
         granja.establoI.meterEquino(buey);
         granja.establoI.meterEquino(buey2);
         granja.establoI.meterEquino(caballo);
         granja.establoI.meterEquino(caballo2);
-        granja.establoII.meterEquino(caballo2);
+
 
 
 
@@ -53,6 +55,43 @@ public class Main {
         System.out.println(granja.matadero.sacrificarAve("Gallina"));
         System.out.println(granja.matadero.sacrificarAve("Gallina"));
         granja.gallinero.recogerHuevo();
+
+
+
+
+        Vaca vaca3 = new Vaca("Vaca Lola");
+        Vaca vaca4 = new Vaca("Vaca Pepa");
+        Vaca vaca5 = new Vaca("Vaca Manoli");
+        Vaca vaca6 = new Vaca("Vaca que rie");
+        Vaca vaca7 = new Vaca("Vaca que llora");
+        granja.establoII.meterEquino(vaca3);
+        granja.establoII.meterEquino(vaca4);
+        granja.establoII.meterEquino(vaca5);
+        granja.establoII.meterEquino(vaca6);
+        granja.establoII.meterEquino(vaca7);
+
+        Gallina gallina1 = new Gallina("Gallina Turuleta");
+        Gallina gallina2 = new Gallina("Gallina Clueca");
+        Gallina gallina3 = new Gallina("Gallina Padovana");
+        Gallina gallina4 = new Gallina("Gallina Sedosa del Japón");
+        Gallina gallina5 = new Gallina("Gallina borbonesa x");
+        granja.gallinero.meterAve(gallina1);
+        granja.gallinero.meterAve(gallina2);
+        granja.gallinero.meterAve(gallina3);
+        granja.gallinero.meterAve(gallina4);
+        granja.gallinero.meterAve(gallina5);
+
+
+
+        granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+        granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+        granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+        granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+        granja.redil.meterAlRedil(granja.establoII.sacarVacaAlRedil());
+
+
+
+
 
 
     }
