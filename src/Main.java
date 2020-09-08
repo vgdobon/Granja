@@ -1,6 +1,7 @@
 import animales.*;
 import granja.Granja;
 
+
 public class Main {
 
 //    Una granja tiene establos y un gallinero.
@@ -21,17 +22,36 @@ public class Main {
 
         Granja granja = new Granja();
 
-        Buey buey=new Buey("Buey");
-        Caballo caballo = new Caballo("Caballo");
-        Gallina gallina = new Gallina("Gallina");
-        Pavo pavo = new Pavo("Pavo");
+
+        //ESTABLO
         Vaca vaca = new Vaca("Vaca");
+        Vaca vaca2 = new Vaca("Vaca2");
+        Buey buey=new Buey("Buey");
+        Buey buey2=new Buey("Buey2");
+        Caballo caballo = new Caballo("Caballo");
+        Caballo caballo2 = new Caballo("Caballo2");
+        granja.establoI.meterEquino(vaca);
+        granja.establoI.meterEquino(vaca2);
+        granja.establoI.meterEquino(buey);
+        granja.establoI.meterEquino(buey2);
+        granja.establoI.meterEquino(caballo);
+        granja.establoI.meterEquino(caballo2);
+        granja.establoII.meterEquino(caballo2);
 
 
+
+        //GALLINERO
+        Gallina gallina = new Gallina("GallinaTuruleta");
+        Pavo pavo = new Pavo("PavoClaudio");
         granja.gallinero.meterAve(pavo);
         granja.gallinero.recogerHuevo();
 
         granja.gallinero.meterAve(gallina);
+        granja.gallinero.recogerHuevo();
+        System.out.println(granja.matadero.sacrificarAve("pavo"));
+        System.out.println(granja.matadero.sacrificarAve("pavo"));
+        System.out.println(granja.matadero.sacrificarAve("Gallina"));
+        System.out.println(granja.matadero.sacrificarAve("Gallina"));
         granja.gallinero.recogerHuevo();
 
 

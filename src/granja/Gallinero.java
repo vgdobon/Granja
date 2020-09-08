@@ -1,34 +1,35 @@
 package granja;
 
 import animales.Ave;
-import animales.Equino;
 import animales.Gallina;
+
+import java.util.ArrayList;
 
 public class Gallinero {
 
 
     private int aves=0;
-    private Ave gallinero[] = new Ave[1000];
+    private ArrayList<Ave> gallinero = new ArrayList<Ave>();
 
 
     public void meterAve(Ave ave){
-        gallinero[getAves()]=ave;
         setAves(getAves()+1);
+        gallinero.add(ave);
     }
 
     public void recogerHuevo(){
         if(hayGallina()){
             System.out.println("Has recogido un huevo del gallinero");
         }else{
-            System.out.println("No hay gallinas en el gallinero");
+            System.out.println("No se pueden recoger huevos. No hay gallinas en el gallinero");
         }
 
     }
 
     public boolean hayGallina(){
         boolean hayGallina=false;
-        for (int i = 0; i <gallinero.length ; i++) {
-            if(gallinero[i] instanceof Gallina){
+        for (int i = 0; i <gallinero.size() ; i++) {
+            if(gallinero.get(i) instanceof Gallina){
                 hayGallina = true;
             }
         }
@@ -48,11 +49,13 @@ public class Gallinero {
         this.aves = aves;
     }
 
-    public Ave[] getGallinero() {
+    public ArrayList<Ave> getGallinero() {
         return gallinero;
     }
 
-    public void setGallinero(Ave[] gallinero) {
+    public void setGallinero(ArrayList<Ave> gallinero) {
         this.gallinero = gallinero;
     }
+
+
 }
