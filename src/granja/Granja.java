@@ -7,6 +7,7 @@ public class Granja {
     public Establo establoIII = new Establo();
 
     public static Gallinero gallinero = new Gallinero();
+    public static Redil redil = new Redil();
 
     public static Matadero matadero = new Matadero();
 

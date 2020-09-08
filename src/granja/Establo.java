@@ -1,6 +1,7 @@
 package granja;
 
 import animales.Equino;
+import interfaces.IRedileable;
 
 public class Establo {
 
@@ -12,6 +13,15 @@ public class Establo {
     public void meterEquino(Equino equino){
         if(getEquinos()<5){
             establo[getEquinos()]=equino;
+            setEquinos(getEquinos()+1);
+        }else{
+            System.out.println("No hay hueco en el establo");
+        }
+    }
+
+    public void meterEquino(IRedileable redileable){
+        if(getEquinos()<5){
+            establo[getEquinos()]=redileable;
             setEquinos(getEquinos()+1);
         }else{
             System.out.println("No hay hueco en el establo");

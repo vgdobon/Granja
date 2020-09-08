@@ -2,6 +2,7 @@ package granja;
 
 import animales.Ave;
 import animales.Gallina;
+import interfaces.IRedileable;
 
 import java.util.ArrayList;
 
@@ -12,9 +13,20 @@ public class Gallinero {
     private ArrayList<Ave> gallinero = new ArrayList<Ave>();
 
 
-    public void meterAve(Ave ave){
+    public  void meterAve(Ave ave){
         setAves(getAves()+1);
         gallinero.add(ave);
+    }
+
+
+    public void sacarAve(Ave ave){
+        setAves(getAves()-1);
+        gallinero.remove(ave);
+    }
+
+    public void sacarAve(IRedileable animal){
+        setAves(getAves()-1);
+        gallinero.remove(animal);
     }
 
     public void recogerHuevo(){
